@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortened URL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+        .box {
+            min-width: 50vw;
+            margin: 30px 0;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .url {
+
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1d4ed8;
+        }
+        .result{
+            min-width: 50vw;
+            margin: 30px 0;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Input Your Url:</h1>
+        <form action="/shorturl" method="post">
+            <input type="text" name="url" placeholder="Enter your URL" required>
+            <input type="submit" value="Shorten URL">
+        </form>
+        <!-- <p>Enter the URL you want to shorten and click "Shorten URL".</p> -->
+    </div>
+    {{if .ShortenedURL}}
+    <div class="result">
+        <p>Shortened URL:</p>
+        <a href="{{.ShortenedURL}}" target="_blank">{{.ShortenedURL}}</a>
+    </div>
+    {{end}}
+
+   
+</body>
+<script>
+
+</script>
+</html>
